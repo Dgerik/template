@@ -1,0 +1,82 @@
+@import "utils/libs";
+@import "utils/var";
+@import "utils/mixin";
+@import "utils/fonts";
+
+html {
+  height: 100%;
+
+
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  
+  @include respond(tab-land) { // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) { // width < 900?
+      font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+      font-size: 75%; //1rem = 12, 12/16
+  }
+  
+}
+
+
+body { 
+  // background-color: $bgcolor-grey;
+  // color: $base-text-color;
+  //font-family: $main-font;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a { 
+  text-decoration: none; 
+  //color: $base-text-color;
+}
+
+p { margin: 0; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea { vertical-align: middle; }
+
+textarea { resize: none; }
+
+section { position: relative; }
+
+input,
+select,
+button { outline: none; }
+
+*, *:before, *:after { box-sizing: border-box; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content { flex: 1 0 auto; }
+
+.container {
+  margin: 0 auto;
+  //max-width: $content-size;
+  width: 100%;
+}
+@import "utils/utils";
+@import "modules/modules";
